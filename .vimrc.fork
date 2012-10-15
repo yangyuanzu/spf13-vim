@@ -1,29 +1,56 @@
-colo molokai
+" Modeline and Notes {
+" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
+"
+" Forked spf13-vim of perfectworks.
+" }
+
+" Environment {
+    " Basic {
+        set clipboard&
+    " }
+" }
 
 " General {
     set fileencodings=ucs-bom,utf-8,gbk
     set fileformats=unix,dos,mac
-    set tags=tags;
+    set tags+=tags;
     set ambiwidth=double
     set laststatus=2
     set autowriteall
-    set scrolljump=0
-    set scrolloff=0
     set nospell
-    set clipboard&
-
     set wildignore+=*-target,target
 " }
 
-" Key Mapping {
-    vunmap <
-    vunmap >
+" Vim UI {
+    colo molokai
+    set scrolljump=0
+    set scrolloff=0
+" }
 
-    nmap gp "0p
-    nmap gP "0P
+" Formatting {
+    autocmd FileType css,less,vm,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" }
+
+" Key (re)Mappings {
+    " Unmap spf13 mappings {
+        cunmap cwd
+
+        vunmap <
+        vunmap >
+    " }
+
+    " Paste yank register {
+        nmap gp "0p
+        nmap gP "0P
+    " }
+
+    " Start shell
     map <Leader>sh :sh<CR>
-    cmap <C-A> <Home>
-    cmap <C-E> <End>
+
+    " Emacs style command line course move {
+        cmap <C-A> <Home>
+        cmap <C-E> <End>
+    " }
 
     " map double j to <esc>, double <esc> to avoid NeoComplCache <esc> bug.
     imap <silent> jj <esc><esc>:w<cr>
@@ -79,6 +106,12 @@ colo molokai
 " }
 
 " Plugins {
+    " SnipMate {
+        " Setting the author var
+        " If forking, please overwrite in your .vimrc.local file
+        let g:snips_author = 'zhangyc <zhangyc@fenbi.com>'
+    " }
+
     " CtrlP {
         nmap <silent> <C-j> :CtrlPTag<cr>
         nmap <silent> <space> :CtrlPMRUFiles<cr>
@@ -86,9 +119,6 @@ colo molokai
         let g:ctrlp_regexp = 1
         let g:ctrlp_cmd = 'CtrlPMixed'
         let g:ctrlp_max_files = 10000
-
-        unlet g:ctrlp_custom_ignore
-        let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
     " }
 
     " Switch.vim {
@@ -121,34 +151,9 @@ colo molokai
     " ZenCoding {
         let g:user_zen_leader_key = '<c-l>'
     " }
-" }
 
-" File type {
-    " Git Commit {
-        au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
-    " }
-
-    " JavaScript {
-    " }
-" }
-
-" Misc {
-    " Sync edit file by bsync {
-        autocmd BufWritePost * call system('bsync '.expand('%:p').' &')
-    " }
-
-    " Remove trailing whitespace {
-        function! RemoveTrailingWhitespace()
-            if &ft != "diff"
-                let b:curcol = col(".")
-                let b:curline = line(".")
-                silent! %s/\s\+$//
-                silent! %s/\(\s*\n\)\+\%$//
-                call cursor(b:curline, b:curcol)
-            endif
-        endfunction
-
-        autocmd BufWritePre *.js,*.less,*.vim,*.java call RemoveTrailingWhitespace()
+    " BufExplorer {
+        unmap <leader>b
     " }
 
     " Generate JavaScript tags {
@@ -161,6 +166,14 @@ colo molokai
 
         autocmd BufWritePost *.js call GenerateTag()
     " }
+
+    " Sync edit file by bsync {
+        autocmd BufWritePost * call system('bsync '.expand('%:p').' &')
+    " }
 " }
 
-" vim: set foldmarker={,} foldlevel=0 foldmethod=marker nospell:
+" Filetype {
+    " Git Commit {
+        au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+    " }
+" }

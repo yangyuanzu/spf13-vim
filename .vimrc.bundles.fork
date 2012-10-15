@@ -1,56 +1,67 @@
-let g:override_spf13_bundles=1
+" spf13 switch variables {
+    let g:override_spf13_bundles=1
+    let g:spf13_no_fastTabs=1
+    let g:spf13_no_keyfixes=1
+" }
 
-" General
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/sessionman.vim'
-Bundle 'matchit.zip'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'mbbill/undotree'
-Bundle 'perfectworks/chdirectory'
-Bundle 'cmdline-completion'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tomasr/molokai'
-Bundle 'myusuf3/numbers.vim'
+" General {
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'tpope/vim-surround'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'vim-scripts/sessionman.vim'
+    Bundle 'matchit.zip'
+    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'jistr/vim-nerdtree-tabs'
+    Bundle 'flazz/vim-colorschemes'
+    Bundle 'mbbill/undotree'
+    Bundle 'myusuf3/numbers.vim'
+" }
 
-" General Programming
-" Pick one of the checksyntax, jslint, or syntastic
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'perfectworks/tabular'
-Bundle 'majutsushi/tagbar'
+" General Programming {
+    Bundle 'scrooloose/syntastic'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'mattn/webapi-vim'
+    Bundle 'mattn/gist-vim'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'perfectworks/tabular'
+    if executable('ctags')
+        Bundle 'majutsushi/tagbar'
+    endif
+" }
 
-" Snippets & AutoComplete
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'honza/snipmate-snippets'
-Bundle 'perfectworks/fenbi-snippet'
+" Snippets & AutoComplete {
+    Bundle 'Shougo/neocomplcache'
+    Bundle 'Shougo/neocomplcache-snippets-complete'
+    Bundle 'honza/snipmate-snippets'
+    Bundle 'perfectworks/fenbi-snippet'
+" }
 
-" Javascript
-Bundle 'leshill/vim-json'
-Bundle 'groenewege/vim-less'
-Bundle 'pangloss/vim-javascript'
-Bundle 'briancollins/vim-jst'
-Bundle 'hallettj/jslint.vim'
+" JavaScript {
+    Bundle 'leshill/vim-json'
+    Bundle 'groenewege/vim-less'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'briancollins/vim-jst'
+" }
 
-" HTML
-Bundle 'amirh/HTML-AutoCloseTag'
-Bundle 'mattn/zencoding-vim'
-Bundle 'juvenn/mustache.vim'
-Bundle 'perfectworks/vim-velocity'
+" HTML {
+    Bundle 'amirh/HTML-AutoCloseTag'
+    Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+" }
 
-" CSS
-Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+" Misc {
+    Bundle 'tpope/vim-markdown'
+    Bundle 'spf13/vim-preview'
+" }
 
-" Misc
-Bundle 'tyru/fencview.vim'
-Bundle 'parantapa/moin.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'spf13/vim-preview'
-Bundle 'sjl/vitality.vim'
+" Custom {
+    Bundle 'parantapa/moin.vim'
+    Bundle 'sjl/vitality.vim'
+    Bundle 'tyru/fencview.vim'
+    Bundle 'tomasr/molokai'
+    Bundle 'perfectworks/chdirectory'
+    Bundle 'cmdline-completion'
+    Bundle 'hallettj/jslint.vim'
+    Bundle 'mattn/zencoding-vim'
+    Bundle 'juvenn/mustache.vim'
+    Bundle 'perfectworks/vim-velocity'
+" }
