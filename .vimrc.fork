@@ -10,14 +10,7 @@ colo molokai
     set scrolljump=0
     set scrolloff=0
     set nospell
-
-    " Backup & Undo {
-        set undodir=$HOME/.vimundodir
-        set undofile
-        set nobackup " undodir is enough
-        set nowb
-        set noswapfile
-    " }
+    set clipboard&
 
     set wildignore+=*-target,target
 " }

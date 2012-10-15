@@ -36,11 +36,11 @@ The goal has always been to add functionality without changing all the features,
 
 ## Linux, \*nix, Mac OSX Installation
 
-The easiest way to install spf13-vim is to use our [automatic installer](https://raw.github.com/spf13/spf13-vim/3.0/bootstrap.sh) by simply copying and pasting the following line into a terminal. This will install spf13-vim and backup your existing vim configuration. If you are upgrading from a prior version (before 3.0) this is also the recommended installation.
+The easiest way to install spf13-vim is to use our [automatic installer](https://raw.github.com/perfectworks/spf13-vim/3.0/bootstrap.sh) by simply copying and pasting the following line into a terminal. This will install spf13-vim and backup your existing vim configuration. If you are upgrading from a prior version (before 3.0) this is also the recommended installation.
 
 ```bash
 
-    curl https://raw.github.com/spf13/spf13-vim/3.0/bootstrap.sh -L -o - | sh
+    curl https://raw.github.com/perfectworks/spf13-vim/3.0/bootstrap.sh -L -o - | sh
 
 ```
 
@@ -96,7 +96,7 @@ The simpliest (and safest) way to update is to simply rerun the installer. It wi
 
 ```bash
 
-    curl https://raw.github.com/spf13/spf13-vim/3.0/bootstrap.sh -L -o - | sh
+    curl https://raw.github.com/perfectworks/spf13-vim/3.0/bootstrap.sh -L -o - | sh
 
 ```
 
