@@ -14,7 +14,6 @@
     Bundle 'jistr/vim-nerdtree-tabs'
     Bundle 'flazz/vim-colorschemes'
     Bundle 'mbbill/undotree'
-    Bundle 'myusuf3/numbers.vim'
 " }
 
 " General Programming {
