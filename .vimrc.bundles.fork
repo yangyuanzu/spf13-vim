@@ -30,9 +30,12 @@
 " }
 
 " Snippets & AutoComplete {
-    Bundle 'Shougo/neocomplcache'
-    Bundle 'Shougo/neocomplcache-snippets-complete'
+    Bundle 'garbas/vim-snipmate'
     Bundle 'honza/snipmate-snippets'
+    " Source support_function.vim to support snipmate-snippets.
+    if filereadable(expand("~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim"))
+        source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
+    endif
     Bundle 'perfectworks/fenbi-snippet'
 " }
 

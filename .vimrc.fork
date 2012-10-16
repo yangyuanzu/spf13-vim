@@ -31,6 +31,15 @@
     autocmd FileType css,less,vm,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 " }
 
+" Complete {
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+" }
+
 " Key (re)Mappings {
     " Unmap spf13 mappings {
         cunmap cwd
@@ -52,8 +61,8 @@
         cmap <C-E> <End>
     " }
 
-    " map double j to <esc>, double <esc> to avoid NeoComplCache <esc> bug.
-    imap <silent> jj <esc><esc>:w<cr>
+    " map double j to <esc>
+    imap <silent> jj <esc>:w<cr>
 
     " F7/F8 to jump to next/prev diff / location-list {
     " @see http://vim.wikia.com/wiki/Selecting_changes_in_diff_mode
@@ -133,23 +142,56 @@
         nmap <F3> :LAck <C-R><C-W>
     " }
 
-    " NeoComplCache {
+    " SnipMate {
         function! ToggleSnipple()
             if &ft == 'snippet'
                 w!
                 edit #
                 bdelete #
             else
-                NeoComplCacheEditSnippets
+                SnipMateOpenSnippetFiles
             endif
         endfunction
 
-        let g:neocomplcache_snippets_dir = neocomplcache_snippets_dir . ",~/.vim/bundle/fenbi-snippet/snippets"
         nmap <F9> :call ToggleSnipple()<CR>
     " }
 
+    " NeoComplCache {
+        unlet! g:neocomplcache_enable_at_startup
+        unlet! g:neocomplcache_enable_camel_case_completion
+        unlet! g:neocomplcache_enable_smart_case
+        unlet! g:neocomplcache_enable_underbar_completion
+        unlet! g:neocomplcache_min_syntax_length
+        unlet! g:neocomplcache_enable_auto_delimiter
+        unlet! g:neocomplcache_max_list
+        unlet! g:neocomplcache_auto_completion_start_length
+        unlet! g:neocomplcache_force_overwrite_completefunc
+        unlet! g:neocomplcache_snippets_dir
+        unlet! g:neocomplcache_enable_auto_select
+        unlet! g:neocomplcache_keyword_patterns
+        unlet! g:neocomplcache_omni_patterns
+
+        iunmap <tab>
+        iunmap <s-tab>
+        sunmap <tab>
+
+        iunmap <C-k>
+        sunmap <C-k>
+        iunmap <C-g>
+        iunmap <C-l>
+
+        iunmap <CR>
+        iunmap <s-CR>
+
+        iunmap <BS>
+        iunmap <C-y>
+
+        set conceallevel&
+        set concealcursor&
+    " }
+
     " ZenCoding {
-        let g:user_zen_leader_key = '<c-l>'
+        let g:user_zen_leader_key = '<c-k>'
     " }
 
     " BufExplorer {
