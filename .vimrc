@@ -91,7 +91,7 @@
 
     " set autowrite                  " automatically write a file when leaving a modified buffer
     set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
-    set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
+    set viewoptions=folds,cursor,unix,slash " better unix / windows compatibility
     set virtualedit=onemore         " allow for cursor beyond last character
     set history=1000                " Store a ton of history (default is 20)
     set spell                       " spell checking on
@@ -501,6 +501,9 @@
         let g:indent_guides_enable_on_vim_startup = 1
      " }
 
+     " Gist {
+        let g:gist_open_browser_after_post = 1
+     " }
 " }
 
 " GUI Settings {
@@ -588,4 +591,3 @@ endfunction
         endif
     endif
 " }
-
