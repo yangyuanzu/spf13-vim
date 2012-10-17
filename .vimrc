@@ -160,13 +160,11 @@
     set wildmenu                    " show list instead of just completing
     set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
-    set scrolljump=5                " lines to scroll when cursor leaves screen
-    set scrolloff=3                 " minimum lines to keep above and below cursor
+    set scrolljump=0                " lines to scroll when cursor leaves screen
+    set scrolloff=5                 " minimum lines to keep above and below cursor
     set foldenable                  " auto fold code
     set list
-    set listchars=tab:,.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
-
-
+    set listchars=tab:,.,trail:.,extends:#,nbsp:.  " Highlight problematic whitespace
 " }
 
 " Formatting {
@@ -430,7 +428,7 @@
 
         " SuperTab like snippets behavior.
         imap  <silent><expr><tab>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
-        smap  <tab>  <right><plug>(neocomplcache_snippets_jump) 
+        smap  <tab>  <right><plug>(neocomplcache_snippets_jump)
 
         " Plugin key-mappings.
         " Ctrl-k expands snippet & moves to next position
@@ -516,7 +514,7 @@
             set guifont=Andale\ Mono\ Regular:h16,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
         endif
         if has('gui_macvim')
-            set transparency=5          " Make the window slightly transparent
+            " set transparency=5          " Make the window slightly transparent
         endif
     else
         if &term == 'xterm' || &term == 'screen'
@@ -590,3 +588,4 @@ endfunction
         endif
     endif
 " }
+

@@ -11,6 +11,7 @@
 " }
 
 " General {
+    set enc=UTF-8
     set fileencodings=ucs-bom,utf-8,gbk
     set fileformats=unix,dos,mac
     set tags+=tags;
@@ -19,12 +20,11 @@
     set autowriteall
     set nospell
     set wildignore+=*-target,target
+    set nu
 " }
 
 " Vim UI {
     colo molokai
-    set scrolljump=0
-    set scrolloff=0
 " }
 
 " Formatting {
@@ -210,7 +210,7 @@
     " }
 
     " Sync edit file by bsync {
-        autocmd BufWritePost * call system('bsync '.expand('%:p').' &')
+    "    autocmd BufWritePost * call system('bsync '.expand('%:p').' &')
     " }
 " }
 
@@ -218,4 +218,13 @@
     " Git Commit {
         au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
     " }
+" }
+
+" clang-complete {
+    let g:clang_hl_errors = 1
+    let g:clang_complete_copen = 1
+    let g:clang_close_preview = 1
+    " call ClangUpdateQuickFix when saving c files
+    autocmd BufWritePost *.c,*.h,*.cpp,*.cc,*.hpp call g:ClangUpdateQuickFix()
+    set nolist
 " }

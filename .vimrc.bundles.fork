@@ -23,6 +23,7 @@
     Bundle 'mattn/gist-vim'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'perfectworks/tabular'
+    Bundle 'Rip-Rip/clang_complete'
     if executable('ctags')
         Bundle 'majutsushi/tagbar'
     endif
