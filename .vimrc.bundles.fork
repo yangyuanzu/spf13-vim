@@ -51,6 +51,10 @@
     Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 " }
 
+" LaTeX {
+    Bundle 'jcf/vim-latex'
+" }
+
 " Misc {
     Bundle 'tpope/vim-markdown'
     Bundle 'spf13/vim-preview'

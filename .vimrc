@@ -188,7 +188,7 @@
     "location. To override this behavior and set it back to '\' (or any other
     "character) add let g:spf13_leader='\' in your .vimrc.bundles.local file
     if !exists('g:spf13_leader')
-        let mapleader = ','
+        let mapleader = '\'
     else
         let mapleader=g:spf13_leader
     endif
@@ -322,6 +322,11 @@
 
     " Ctags {
         set tags=./tags;/,~/.vimtags
+    " }
+
+    " Latex-Suite {
+        set grepprg=grep\ -nH\ $*
+        let g:tex_flavor='latex'
     " }
 
     " AutoCloseTag {
