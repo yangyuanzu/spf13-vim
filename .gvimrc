@@ -7,3 +7,7 @@ elseif (has ("gui_x11"))
 else
     set guifont=Ubuntu\ Mono:h18 " 字体设置
 endif
+
+
+" Disable all blinking:
+set guicursor+=a:blinkon0

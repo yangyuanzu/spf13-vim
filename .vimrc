@@ -78,7 +78,8 @@
     endif
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " syntax highlighting
-    set mouse=a                 " automatically enable mouse usage
+    " set mouse=a                 " automatically enable mouse usage
+    set mouse-=a                " no mouse
     scriptencoding utf-8
 
     " Most prefer to automatically switch to the current file directory when
@@ -163,13 +164,13 @@
     set whichwrap=b,s,<,>,[,]   " backspace and cursor keys wrap to
     set scrolljump=0                " lines to scroll when cursor leaves screen
     set scrolloff=5                 " minimum lines to keep above and below cursor
-    set foldenable                  " auto fold code
+    " set foldenable                  " auto fold code
     set list
     set listchars=tab:,.,trail:.,extends:#,nbsp:.  " Highlight problematic whitespace
 " }
 
 " Formatting {
-    set nowrap                      " wrap long lines
+    " set nowrap                      " wrap long lines
     set autoindent                  " indent at the same level of the previous line
     set shiftwidth=4                " use indents of 4 spaces
     set expandtab                   " tabs are spaces, not tabs
@@ -189,7 +190,7 @@
     "location. To override this behavior and set it back to '\' (or any other
     "character) add let g:spf13_leader='\' in your .vimrc.bundles.local file
     if !exists('g:spf13_leader')
-        let mapleader = '\'
+        let mapleader = ','
     else
         let mapleader=g:spf13_leader
     endif
@@ -250,7 +251,7 @@
     nmap <silent> <leader>/ :nohlsearch<CR>
 
     " Shortcuts
-    " Change Working Directory to that of the current file
+    " Change Working Dire,tory to that of the current file
     cmap cwd lcd %:p:h
     cmap cd. lcd %:p:h
 
@@ -260,10 +261,10 @@
 
     " Fix home and end keybindings for screen, particularly on mac
     " - for some reason this fixes the arrow keys too. huh.
-    map [F $
-    imap [F $
-    map [H g0
-    imap [H g0
+    " map [F $
+    " imap [F $
+    " map [H g0
+    " imap [H g0
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
@@ -328,6 +329,12 @@
     " Latex-Suite {
         set grepprg=grep\ -nH\ $*
         let g:tex_flavor='latex'
+        let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
+        let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+        let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
+        let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
+        let g:Tex_DefaultTargetFormat = 'pdf'
+        let g:Tex_ViewRule_pdf = 'open'
     " }
 
     " AutoCloseTag {
@@ -350,11 +357,11 @@
         let NERDTreeShowBookmarks=1
         let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
         let NERDTreeChDirMode=0
-        let NERDTreeQuitOnOpen=1
+        " let NERDTreeQuitOnOpen=1
         let NERDTreeMouseMode=2
         let NERDTreeShowHidden=1
         let NERDTreeKeepTreeInNewTab=1
-        let g:nerdtree_tabs_open_on_gui_startup=0
+        let g:nerdtree_tabs_open_on_gui_startup=1
     " }
 
     " Tabularize {
