@@ -11,3 +11,5 @@ endif
 
 " Disable all blinking:
 set guicursor+=a:blinkon0
+
+cd ~/workspace/live

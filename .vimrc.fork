@@ -38,6 +38,11 @@
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
     autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
+
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+
+    hi cCustomFunc  guifg=yellowgreen
+    hi cCustomClass guifg=#6DDEFE
 " }
 
 " Key (re)Mappings {
@@ -62,7 +67,9 @@
     " }
 
     " map double j to <esc>
-    imap <silent> jj <esc>:w<cr>
+    " imap <silent> jj <esc>:w<cr>
+    " YouCompleteMe
+    nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
     " F7/F8 to jump to next/prev diff / location-list {
     " @see http://vim.wikia.com/wiki/Selecting_changes_in_diff_mode
@@ -156,40 +163,6 @@
         nmap <F9> :call ToggleSnipple()<CR>
     " }
 
-    " NeoComplCache {
-        unlet! g:neocomplcache_enable_at_startup
-        unlet! g:neocomplcache_enable_camel_case_completion
-        unlet! g:neocomplcache_enable_smart_case
-        unlet! g:neocomplcache_enable_underbar_completion
-        unlet! g:neocomplcache_min_syntax_length
-        unlet! g:neocomplcache_enable_auto_delimiter
-        unlet! g:neocomplcache_max_list
-        unlet! g:neocomplcache_auto_completion_start_length
-        unlet! g:neocomplcache_force_overwrite_completefunc
-        unlet! g:neocomplcache_snippets_dir
-        unlet! g:neocomplcache_enable_auto_select
-        unlet! g:neocomplcache_keyword_patterns
-        unlet! g:neocomplcache_omni_patterns
-
-        iunmap <tab>
-        iunmap <s-tab>
-        sunmap <tab>
-
-        iunmap <C-k>
-        sunmap <C-k>
-        iunmap <C-g>
-        iunmap <C-l>
-
-        iunmap <CR>
-        iunmap <s-CR>
-
-        iunmap <BS>
-        iunmap <C-y>
-
-        set conceallevel&
-        set concealcursor&
-    " }
-
     " ZenCoding {
         let g:user_zen_leader_key = '<c-k>'
     " }
@@ -220,11 +193,7 @@
     " }
 " }
 
-" clang-complete {
-    let g:clang_hl_errors = 1
-    let g:clang_complete_copen = 1
-    let g:clang_close_preview = 1
-    " call ClangUpdateQuickFix when saving c files
-    autocmd BufWritePost *.c,*.h,*.cpp,*.cc,*.hpp call g:ClangUpdateQuickFix()
-    set nolist
+" Path {
+    set path+=.,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1
 " }
+

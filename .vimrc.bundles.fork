@@ -1,7 +1,9 @@
 " spf13 switch variables {
     let g:override_spf13_bundles=1
     let g:spf13_no_fastTabs=1
-    let g:spf13_no_keyfixes=1
+    "let g:spf13_no_keyfixes=1
+    let g:spf13_no_autochdir=1
+    let g:ycm_confirm_extra_conf = 0
 " }
 
 " General {
@@ -23,7 +25,7 @@
     Bundle 'mattn/gist-vim'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'perfectworks/tabular'
-    Bundle 'Rip-Rip/clang_complete'
+    Bundle 'Valloric/YouCompleteMe'
     if executable('ctags')
         Bundle 'majutsushi/tagbar'
     endif
@@ -67,8 +69,11 @@
     Bundle 'tomasr/molokai'
     Bundle 'perfectworks/chdirectory'
     Bundle 'cmdline-completion'
-    Bundle 'hallettj/jslint.vim'
+    "Bundle 'hallettj/jslint.vim'
+    Bundle 'Shutnik/jshint2.vim'
     Bundle 'mattn/zencoding-vim'
     Bundle 'juvenn/mustache.vim'
-    Bundle 'perfectworks/vim-velocity'
+    Bundle 'lepture/vim-velocity'
+    Bundle 'perfectworks/fenbi-frontend'
 " }
+
