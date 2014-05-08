@@ -12,4 +12,4 @@ endif
 " Disable all blinking:
 set guicursor+=a:blinkon0
 
-cd ~/workspace/cpp/truman-live
+cd ~/truman/truman-web

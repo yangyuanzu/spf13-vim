@@ -43,6 +43,9 @@
     let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
     let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 
+    " ignore all the angular html attribute
+    let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
     hi cCustomFunc  guifg=yellowgreen
     hi cCustomClass guifg=#6DDEFE
 " }
